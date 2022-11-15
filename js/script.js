@@ -28,7 +28,7 @@ function controlRecordings (index = 0) {
     var i = index;
 
     // Get the audio element
-    var music_player = document.querySelector("fixed");
+    var music_player = document.querySelector("#fixed");
 
     // function for moving to next audio file
     function next() {
