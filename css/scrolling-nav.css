@@ -128,3 +128,9 @@ video {
     height: auto;
     width: auto\9; /* ie8 */
 }
+
+#fixed{
+  position:fixed;
+  bottom:0px;
+  right:0px;
+}

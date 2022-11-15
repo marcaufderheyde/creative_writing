@@ -1,3 +1,12 @@
+function pauseMedia() {
+    $.each($('audio'), function () {
+        if(!this.paused) {
+            this.pause();
+            //console.log(this);
+        }
+    });
+}
+
 function fadeInPage() {
     if(!window.AnimationEvent) { return; }
     var fader = document.getElementById('fader');
