@@ -76,10 +76,12 @@ function loadMedia() {
     });
 }
 
-document.getElementById('playButton').addEventListener("click", function(){
-    console.log(playButton.value);
-    controlRecordings(playButton.value);
-});
+function setupPlayListener() {
+    document.getElementById('playButton').addEventListener("click", function(){
+        console.log(playButton.value);
+        controlRecordings(playButton.value);
+    });
+}
 
 function fadeInPage() {
     if(!window.AnimationEvent) { return; }
