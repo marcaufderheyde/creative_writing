@@ -10,9 +10,9 @@ function pauseMedia() {
 function loadMedia() {
     $.each($('audio'), function () {
         if(!this.paused) {
-            var audio = document.getElementById('fixed');
-            audio.src = this.src;
-            audio.duration = this.duration;
+            var fixedAudio = document.getElementById('fixed');
+            fixedAudio.src = this.src;
+            fixedAudio.duration = this.duration;
             console.log("Found a playing file");
         }
     });
