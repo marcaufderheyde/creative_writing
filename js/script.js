@@ -69,7 +69,8 @@ function loadMedia() {
     $.each($('audio'), function () {
         if(!this.paused) {
             var fixedAudio = document.getElementById('#fixed');
-            fixedAudio = this;
+            fixedAudio.src = this.src;
+            fixedAudio.currentTime = this.currentTime;
             console.log("Found a playing file");
         }
     });
