@@ -76,11 +76,9 @@ function loadMedia() {
     });
 }
 
-function setupPlayListener() {
-    document.getElementById('playButton').addEventListener("click", function(){
-        console.log(playButton.value);
-        controlRecordings(playButton.value);
-    });
+function clickPlay(value) {
+    console.log(value);
+    controlRecordings(value);
 }
 
 function fadeInPage() {
