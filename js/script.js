@@ -51,8 +51,14 @@ function controlRecordings (index = 0) {
         throw "Playlist Player does not exists ...";
     } else {
         // Start the player
-        music_player.src = files[i];
+        if(!music_player.paused){
+            music_player.pause();
+        }
 
+        music_player.src = files[i];
+        music_player.load();
+        music_player.play();
+        
         // Listen for the music ended event, to play the next audio file
         music_player.addEventListener('ended', next, false)
     }
