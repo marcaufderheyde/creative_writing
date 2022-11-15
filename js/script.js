@@ -11,8 +11,7 @@ function loadMedia() {
     $.each($('audio'), function () {
         if(!this.paused) {
             var fixedAudio = document.getElementById('fixed');
-            fixedAudio.src = this.src;
-            fixedAudio.duration = this.duration;
+            fixedAudio = this;
             console.log("Found a playing file");
         }
     });
