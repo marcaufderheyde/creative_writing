@@ -1,4 +1,4 @@
-function controlRecordings () {
+function controlRecordings (index = 0) {
     // Playlist array
     var files = [
         "recordings/day_2_la.mp3",
@@ -25,10 +25,10 @@ function controlRecordings () {
     ];
 
     // Current index of the files array
-    var i = 0;
+    var i = index;
 
     // Get the audio element
-    var music_player = document.querySelector("#fixed");
+    var music_player = document.querySelector("fixed");
 
     // function for moving to next audio file
     function next() {
@@ -68,7 +68,7 @@ function pauseMedia() {
 function loadMedia() {
     $.each($('audio'), function () {
         if(!this.paused) {
-            var fixedAudio = document.getElementById('#fixed');
+            var fixedAudio = document.getElementById('fixed');
             fixedAudio.src = this.src;
             fixedAudio.currentTime = this.currentTime;
             console.log("Found a playing file");
@@ -76,8 +76,9 @@ function loadMedia() {
     });
 }
 
-document.addEventListener("click", function(){
-    loadMedia();
+document.getElementById('playButton').addEventListener("click", function(){
+    console.log(playButton.value);
+    controlRecordings(playButton.value);
 });
 
 function fadeInPage() {
