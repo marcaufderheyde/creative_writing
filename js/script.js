@@ -7,6 +7,21 @@ function pauseMedia() {
     });
 }
 
+function loadMedia() {
+    $.each($('audio'), function () {
+        if(!this.paused) {
+            var audio = document.getElementById('fixed');
+            audio.src = this.src;
+            audio.duration = this.duration;
+            console.log("Found a playing file");
+        }
+    });
+}
+
+document.addEventListener("click", function(){
+    loadMedia();
+});
+
 function fadeInPage() {
     if(!window.AnimationEvent) { return; }
     var fader = document.getElementById('fader');
