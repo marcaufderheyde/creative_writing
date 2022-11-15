@@ -39,8 +39,11 @@ function controlRecordings (index = 0) {
             i++;
         }
 
-        // Change the audio element source
+        // Pause, Change the audio element source, load the new one, and play
+        music_player.pause();
         music_player.src = files[i];
+        music_player.load();
+        music_player.play();
     }
 
     // Check if the player is selected
@@ -56,28 +59,7 @@ function controlRecordings (index = 0) {
 
 }
 
-function pauseMedia() {
-    $.each($('audio'), function () {
-        if(!this.paused) {
-            this.pause();
-            //console.log(this);
-        }
-    });
-}
-
-function loadMedia() {
-    $.each($('audio'), function () {
-        if(!this.paused) {
-            var fixedAudio = document.getElementById('fixed');
-            fixedAudio.src = this.src;
-            fixedAudio.currentTime = this.currentTime;
-            console.log("Found a playing file");
-        }
-    });
-}
-
 function clickPlay(value) {
-    console.log(value);
     controlRecordings(value);
 }
 
