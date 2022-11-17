@@ -1,5 +1,5 @@
 function controlRecordings (index = 0) {
-    // Playlist array
+    // Playlist array -- CURRENT INDEX FOR HTML PAGE IS 21, if recordings are added, increment in this comment
     var files = [
         "recordings/day_2_la.mp3",
         "recordings/read_poem_post_la.mp3",
@@ -22,6 +22,7 @@ function controlRecordings (index = 0) {
         "recordings/the_rain.mp3",
         "recordings/a_devious_kitty.mp3",
         "recordings/a_breath_of_fresh_air.mp3",
+        "recordings/puzzles.mp3",
     ];
 
     // Current index of the files array
@@ -58,7 +59,7 @@ function controlRecordings (index = 0) {
         music_player.src = files[i];
         music_player.load();
         music_player.play();
-        
+
         // Listen for the music ended event, to play the next audio file
         music_player.addEventListener('ended', next, false)
     }
